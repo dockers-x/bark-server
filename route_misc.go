@@ -1,16 +1,22 @@
 package main
 
 import (
+	"os"
 	"runtime"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
 
+const helpUrl = "HELP_URL"
+
 func init() {
 	registerRoute("misc", func(router fiber.Router) {
 		// Return an OK to indicate the server is running normally
 		router.Get("/", func(c *fiber.Ctx) error {
+			if os.Getenv(helpUrl) != "" {
+				return c.Redirect(os.Getenv(helpUrl))
+			}
 			return c.SendString("ok")
 		})
 

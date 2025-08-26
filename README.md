@@ -31,14 +31,14 @@
 The docker image is already available, you can use the following command to run the bark server:
 
 ``` sh
-docker run -dt --name bark -p 8080:8080 -v `pwd`/bark-data:/data finab/bark-server
+docker run -dt --name bark -p 8080:8080 -v `pwd`/bark-data:/data dockers-x/bark-server
 ```
 
 If you use the docker-compose tool, you can copy docker-copose.yaml under this project to any directory and run it:
 
 ``` sh
 mkdir bark-server && cd bark-server
-curl -sL https://github.com/Finb/bark-server/raw/master/deploy/docker-compose.yaml > docker-compose.yaml
+curl -sL https://github.com/dockers-x/bark-server/raw/master/deploy/docker-compose.yaml > docker-compose.yaml
 docker compose up -d
 ```
 
